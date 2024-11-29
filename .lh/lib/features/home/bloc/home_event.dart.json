@@ -1,0 +1,30 @@
+{
+    "sourceFile": "lib/features/home/bloc/home_event.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1732777838036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1732777850258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,5 @@\n @immutable\n sealed class HomeEvent {}\n \n \n+class Homeb\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732777902201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,5 @@\n @immutable\n sealed class HomeEvent {}\n \n \n-class Home\n\\ No newline at end of file\n+class Homep\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732777923300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,5 @@\n @immutable\n sealed class HomeEvent {}\n \n \n-class HomeProductWishlistE\n\\ No newline at end of file\n+class HomeProductWishlist\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1732777838036,
+            "name": "Commit-0",
+            "content": "part of 'home_bloc.dart';\n\n@immutable\nsealed class HomeEvent {}\n\n\n"
+        }
+    ]
+}

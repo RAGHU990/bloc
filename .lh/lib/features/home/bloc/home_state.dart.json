@@ -1,0 +1,58 @@
+{
+    "sourceFile": "lib/features/home/bloc/home_state.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1732778436145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1732778444244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n sealed class HomeState {}\n \n final class HomeInitial extends HomeState {}\n \n-\n+final class Hon\n"
+                },
+                {
+                    "date": 1732778452615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n sealed class HomeState {}\n \n final class HomeInitial extends HomeState {}\n \n-final class Hon\n+final class HomeA\n"
+                },
+                {
+                    "date": 1732778462581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n sealed class HomeState {}\n \n final class HomeInitial extends HomeState {}\n \n-final class HomeA\n+final class HomeActionState extends Hom\n"
+                },
+                {
+                    "date": 1732778482384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,9 @@\n sealed class HomeState {}\n \n final class HomeInitial extends HomeState {}\n \n-final class HomeActionState extends Hom\n+final class HomeActionState extends HomeState {\n+\n+}\n+\n+final class \n"
+                },
+                {
+                    "date": 1732778490045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,5 @@\n final class HomeActionState extends HomeState {\n \n }\n \n-final class \n+final class HomeLod\n"
+                },
+                {
+                    "date": 1732778500885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,5 @@\n final class HomeActionState extends HomeState {\n \n }\n \n-final class HomeLod\n+final class HomeLoadedState extends Home\n"
+                },
+                {
+                    "date": 1732778506857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,7 @@\n final class HomeActionState extends HomeState {\n \n }\n \n-final class HomeLoadedState extends Home\n+final class HomeLoadedState extends HomeState {\n+  \n+}\n"
+                },
+                {
+                    "date": 1732778513612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,9 @@\n \n }\n \n final class HomeLoadedState extends HomeState {\n-  \n+\n }\n+\n+\n+final class \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732778537007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n final class HomeActionState extends HomeState {\n \n }\n \n-final class HomeLoadINState extends HomeState {\n+final class HomeLoadIState extends HomeState {\n \n }\n \n \n"
+                },
+                {
+                    "date": 1732778657595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,5 +21,5 @@\n final class HomeErrorState extends HomeState {\n \n }\n \n-final class HomeNavtoWishlistPageAction\n\\ No newline at end of file\n+final class HomeNavtoWishlistPageActionS\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1732778436145,
+            "name": "Commit-0",
+            "content": "part of 'home_bloc.dart';\n\n@immutable\nsealed class HomeState {}\n\nfinal class HomeInitial extends HomeState {}\n\n\n"
+        }
+    ]
+}

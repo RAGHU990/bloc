@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/features/home/bloc/home_bloc.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1732798320330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1732798320330,
+            "name": "Commit-0",
+            "content": "import 'package:bloc/bloc.dart';\nimport 'package:meta/meta.dart';\n\npart 'home_event.dart';\npart 'home_state.dart';\n\nclass HomeBloc extends Bloc<HomeEvent, HomeState> {\n  HomeBloc() : super(HomeInitial()) {\n    on<HomeEvent>((event, emit) {\n    });\n  }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+{
+    "sourceFile": "lib/features/home/ui/home.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 24,
+            "patches": [
+                {
+                    "date": 1732774683105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1732774689390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-st\n\\ No newline at end of file\n+fs\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732774694853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,8 @@\n-fs\n\\ No newline at end of file\n+class Home extends StatelessWidget {\r\n+const Home({ Key? key }) : super(key: key);\r\n+\r\n+  @override\r\n+  Widget build(BuildContext context){\r\n+    return Container();\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732774708826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n+import 'package:flutter/material.dart';\r\n+\r\n class Home extends StatelessWidget {\r\n-const Home({ Key? key }) : super(key: key);\r\n+const Home({ super.key });\r\n \r\n   @override\r\n   Widget build(BuildContext context){\r\n     return Container();\r\n"
+                },
+                {
+                    "date": 1732774913236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n const Home({ super.key });\r\n \r\n   @override\r\n   Widget build(BuildContext context){\r\n-    return Container();\r\n+    return S();\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732774922004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n const Home({ super.key });\r\n \r\n   @override\r\n   Widget build(BuildContext context){\r\n-    return S();\r\n+    return const Scaffold();\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732774927531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,10 @@\n const Home({ super.key });\r\n \r\n   @override\r\n   Widget build(BuildContext context){\r\n-    return const Scaffold();\r\n+    return const Scaffold(\r\n+\r\n+      appBar: ,\r\n+    );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732774943897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n   @override\r\n   Widget build(BuildContext context){\r\n     return const Scaffold(\r\n \r\n-      appBar: ,\r\n+      appBar: AppBa,\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732774980043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n   @override\r\n   Widget build(BuildContext context){\r\n     return const Scaffold(\r\n \r\n-      appBar: AppBa,\r\n+      appBar: AppBar(),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732774989396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,12 @@\n const Home({ super.key });\r\n \r\n   @override\r\n   Widget build(BuildContext context){\r\n-    return const Scaffold(\r\n+    return  Scaffold(\r\n \r\n-      appBar: AppBar(),\r\n+      appBar: AppBar(\r\n+        titl\r\n+      ),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732774995344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   Widget build(BuildContext context){\r\n     return  Scaffold(\r\n \r\n       appBar: AppBar(\r\n-        titl\r\n+        title: \r\n       ),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732775001300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   Widget build(BuildContext context){\r\n     return  Scaffold(\r\n \r\n       appBar: AppBar(\r\n-        title: \r\n+        title: Text(data)\r\n       ),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732775013120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   Widget build(BuildContext context){\r\n     return  Scaffold(\r\n \r\n       appBar: AppBar(\r\n-        title: Text(data)\r\n+        title:   Text(\"HELLO\")\r\n       ),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732775018757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   Widget build(BuildContext context){\r\n     return  Scaffold(\r\n \r\n       appBar: AppBar(\r\n-        title:   Text(\"HELLO\")\r\n+        title:   Text(\"HELLO\", Te)\r\n       ),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732775024664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   Widget build(BuildContext context){\r\n     return  Scaffold(\r\n \r\n       appBar: AppBar(\r\n-        title:   Text(\"HELLO\", Te)\r\n+        title:   Text(\"HELLO\", st)\r\n       ),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732775030475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   Widget build(BuildContext context){\r\n     return  Scaffold(\r\n \r\n       appBar: AppBar(\r\n-        title:   Text(\"HELLO\", st)\r\n+        title:   Text(\"HELLO\", style: TextStyle(),)\r\n       ),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732775052859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,11 @@\n   Widget build(BuildContext context){\r\n     return  Scaffold(\r\n \r\n       appBar: AppBar(\r\n-        title:   Text(\"HELLO\", style: TextStyle(),)\r\n+        title:   const Text(\"HELLO\", style: TextStyle(\r\n+          \r\n+        ),)\r\n       ),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1732778843279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n \r\n   @override\r\n   Widget build(BuildContext context){\r\n     return  Scaffold(\r\n-\r\n       appBar: AppBar(\r\n         title:   const Text(\"HELLO\", style: TextStyle(\r\n           \r\n         ),)\r\n"
+                },
+                {
+                    "date": 1732778850202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,23 @@\n import 'package:flutter/material.dart';\r\n \r\n class Home extends StatelessWidget {\r\n-const Home({ super.key });\r\n+  const Home({super.key});\r\n \r\n   @override\r\n-  Widget build(BuildContext context){\r\n-    return  Scaffold(\r\n-      appBar: AppBar(\r\n-        title:   const Text(\"HELLO\", style: TextStyle(\r\n-          \r\n-        ),)\r\n-      ),\r\n+  Widget build(BuildContext context) {\r\n+    return BlocConsumer<SubjectBloc, SubjectState>(\r\n\\ No newline at end of file\n+      listener: (context, state) {\r\n+        // TODO: implement listener\r\n+      },\r\n+      builder: (context, state) {\r\n+        return Scaffold(\r\n+          appBar: AppBar(\r\n+              title: const Text(\r\n+            \"HELLO\",\r\n+            style: TextStyle(),\r\n+          )),\r\n+        );\r\n+      },\r\n     );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1732778878510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import 'package:flutter/material.dart';\r\n+import 'package:flutter_bloc/flutter_bloc.dart';\r\n \r\n class Home extends StatelessWidget {\r\n   const Home({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return BlocConsumer<SubjectBloc, SubjectState>(\r\n+    return BlocConsumer<, SubjectState>(\r\n       listener: (context, state) {\r\n         // TODO: implement listener\r\n       },\r\n       builder: (context, state) {\r\n@@ -19,5 +20,5 @@\n         );\r\n       },\r\n     );\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n"
+                },
+                {
+                    "date": 1732778884921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n import 'package:flutter/material.dart';\r\n+import 'package:flutter_application_1/features/home/bloc/home_bloc.dart';\r\n import 'package:flutter_bloc/flutter_bloc.dart';\r\n \r\n class Home extends StatelessWidget {\r\n   const Home({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return BlocConsumer<, SubjectState>(\r\n+    return BlocConsumer<HomeBloc, Home>(\r\n       listener: (context, state) {\r\n         // TODO: implement listener\r\n       },\r\n       builder: (context, state) {\r\n"
+                },
+                {
+                    "date": 1732778890787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const Home({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return BlocConsumer<HomeBloc, Home>(\r\n+    return BlocConsumer<HomeBloc, HomeState>(\r\n       listener: (context, state) {\r\n         // TODO: implement listener\r\n       },\r\n       builder: (context, state) {\r\n"
+                },
+                {
+                    "date": 1732778967228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return BlocConsumer<HomeBloc, HomeState>(\r\n       listener: (context, state) {\r\n-        // TODO: implement listener\r\n       },\r\n       builder: (context, state) {\r\n         return Scaffold(\r\n           appBar: AppBar(\r\n"
+                },
+                {
+                    "date": 1732779074703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import 'package:flutter_bloc/flutter_bloc.dart';\r\n \r\n class Home extends StatelessWidget {\r\n   const Home({super.key});\r\n-  \r\n+  f\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return BlocConsumer<HomeBloc, HomeState>(\r\n"
+                },
+                {
+                    "date": 1732779150324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return BlocConsumer<HomeBloc, HomeState>(\r\n       bloc: homeBloc,\r\n+      \r\n       listener: (context, state) {\r\n         \r\n       },\r\n       builder: (context, state) {\r\n"
+                }
+            ],
+            "date": 1732774683105,
+            "name": "Commit-0",
+            "content": "st"
+        }
+    ]
+}

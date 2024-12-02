@@ -16,3 +16,8 @@ final class HomeErrorState extends HomeState {}
 final class HomeNavtoWishlistPageActionState extends HomeActionState {}
 
 final class HomeNavtoCartPageActionState extends HomeActionState {}
+
+final class HomePrintHelloWorldPrintState extends HomeState {
+  final String message;
+  HomePrintHelloWorldPrintState(this.message);
+}

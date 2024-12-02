@@ -3,11 +3,239 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 57,
             "patches": [
                 {
                     "date": 1732798320330,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1732943683900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,41 @@\n+import 'dart:async';\n+\n import 'package:bloc/bloc.dart';\n import 'package:meta/meta.dart';\n \n part 'home_event.dart';\n part 'home_state.dart';\n \n class HomeBloc extends Bloc<HomeEvent, HomeState> {\n   HomeBloc() : super(HomeInitial()) {\n-    on<HomeEvent>((event, emit) {\n-    });\n+    \n+    on<HomeProductWishlistButtonClickedEvent>(\n+        homeProductWishlistButtonClickedEvent);\n+    on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n+    on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n+    on<HomeProductWishlistButtonNavigateEvent>(\n+        homeProductWishlistButtonNavigateEvent);\n   }\n+\n+  FutureOr<void> homeProductWishlistButtonClickedEvent(\n+      HomeProductWishlistButtonClickedEvent event, Emitter<HomeState> emit) {\n+    print(\"Wishlist Product Clicked\");\n+  }\n+\n+  FutureOr<void> homeProductCartButtonClickedEvent(\n+      HomeProductCartButtonClickedEvent event, Emitter<HomeState> emit) {\n+    print(\"Cart Product Clicked\");\n+  }\n+\n+  FutureOr<void> homeProductCartButtonNavigateEvent(\n+      HomeProductCartButtonNavigateEvent event, Emitter<HomeState> emit) {\n+    print(\"Cart Navigate Clicked\");\n+    emit(HomeNavtoWishlistPageActionState());\n+  }\n+\n+  FutureOr<void> homeProductWishlistButtonNavigateEvent(\n+      HomeProductWishlistButtonNavigateEvent event, Emitter<HomeState> emit) {\n+    print(\"Wishlist Navigate Clicked\");\n+    emit(HomeNavtoWishlistPageActionState());\n+  }\n }\n"
+                },
+                {
+                    "date": 1732943692776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n part 'home_state.dart';\n \n class HomeBloc extends Bloc<HomeEvent, HomeState> {\n   HomeBloc() : super(HomeInitial()) {\n-    \n+    on<>()\n     on<HomeProductWishlistButtonClickedEvent>(\n         homeProductWishlistButtonClickedEvent);\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n"
+                },
+                {
+                    "date": 1732943705251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n part 'home_state.dart';\n \n class HomeBloc extends Bloc<HomeEvent, HomeState> {\n   HomeBloc() : super(HomeInitial()) {\n-    on<>()\n+    on<HomeInitialEvent>()\n     on<HomeProductWishlistButtonClickedEvent>(\n         homeProductWishlistButtonClickedEvent);\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n"
+                },
+                {
+                    "date": 1732943715800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n part 'home_state.dart';\n \n class HomeBloc extends Bloc<HomeEvent, HomeState> {\n   HomeBloc() : super(HomeInitial()) {\n-    on<HomeInitialEvent>()\n+    on<HomeInitialEvent>(HomeInitialEvent)\n     on<HomeProductWishlistButtonClickedEvent>(\n         homeProductWishlistButtonClickedEvent);\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n"
+                },
+                {
+                    "date": 1732943723173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n part 'home_state.dart';\n \n class HomeBloc extends Bloc<HomeEvent, HomeState> {\n   HomeBloc() : super(HomeInitial()) {\n-    on<HomeInitialEvent>(HomeInitialEvent)\n+    on<HomeInitialEvent>(homeInitialEvent);\n     on<HomeProductWishlistButtonClickedEvent>(\n         homeProductWishlistButtonClickedEvent);\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n"
+                },
+                {
+                    "date": 1732943731972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,5 +37,8 @@\n       HomeProductWishlistButtonNavigateEvent event, Emitter<HomeState> emit) {\n     print(\"Wishlist Navigate Clicked\");\n     emit(HomeNavtoWishlistPageActionState());\n   }\n+\n+  FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n+  }\n }\n"
+                },
+                {
+                    "date": 1732943741110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,12 @@\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n   }\n \n+  \n+  FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n+  }\n+\n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n       HomeProductWishlistButtonClickedEvent event, Emitter<HomeState> emit) {\n     print(\"Wishlist Product Clicked\");\n   }\n@@ -38,7 +42,5 @@\n     print(\"Wishlist Navigate Clicked\");\n     emit(HomeNavtoWishlistPageActionState());\n   }\n \n-  FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n-  }\n }\n"
+                },
+                {
+                    "date": 1732944100886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,10 @@\n   }\n \n   \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n+    \n+\n   }\n \n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n       HomeProductWishlistButtonClickedEvent event, Emitter<HomeState> emit) {\n"
+                },
+                {
+                    "date": 1732944109112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   }\n \n   \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n-    \n+     emit()\n \n   }\n \n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n"
+                },
+                {
+                    "date": 1732944116415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   }\n \n   \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n-     emit()\n+     emit(HomeLoadingState());\n \n   }\n \n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n"
+                },
+                {
+                    "date": 1732944123701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n \n   \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n+     Futr\n \n   }\n \n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n"
+                },
+                {
+                    "date": 1732944130649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n   \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n-     Futr\n+     Future.Del\n \n   }\n \n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n"
+                },
+                {
+                    "date": 1732944135938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n   \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n-     Future.Del\n+     Future.delayed()\n \n   }\n \n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n"
+                },
+                {
+                    "date": 1732944145467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n   \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n-     Future.delayed()\n+     Future.delayed(Duration(second))\n \n   }\n \n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n"
+                },
+                {
+                    "date": 1732944151791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n   \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n-     Future.delayed(Duration(second))\n+     Future.delayed(Duration(seconds:3));\n \n   }\n \n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n"
+                },
+                {
+                    "date": 1732944158575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n      Future.delayed(Duration(seconds:3));\n-\n+     emit\n   }\n \n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n       HomeProductWishlistButtonClickedEvent event, Emitter<HomeState> emit) {\n"
+                },
+                {
+                    "date": 1732944165780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n      Future.delayed(Duration(seconds:3));\n-     emit\n+     emit(HomeLoa)\n   }\n \n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n       HomeProductWishlistButtonClickedEvent event, Emitter<HomeState> emit) {\n"
+                },
+                {
+                    "date": 1732944171872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n      Future.delayed(Duration(seconds:3));\n-     emit(HomeLoa)\n+     emit(HomeLoadedSuccessState());\n   }\n \n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n       HomeProductWishlistButtonClickedEvent event, Emitter<HomeState> emit) {\n"
+                },
+                {
+                    "date": 1732948721077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n   }\n \n-  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n      Future.delayed(Duration(seconds:3));\n      emit(HomeLoadedSuccessState());\n"
+                },
+                {
+                    "date": 1732949416855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n   }\n-\n+ \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n      Future.delayed(Duration(seconds:3));\n      emit(HomeLoadedSuccessState());\n"
+                },
+                {
+                    "date": 1732949530614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n   }\n  \n+ \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n      Future.delayed(Duration(seconds:3));\n      emit(HomeLoadedSuccessState());\n"
+                },
+                {
+                    "date": 1732965225047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     on<HomeProductWishlistButtonClickedEvent>(\n         homeProductWishlistButtonClickedEvent);\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n-    on<HomeProductWishlistButtonNavigateEvent>(\n+     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n   }\n  \n  \n"
+                },
+                {
+                    "date": 1732965542128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,13 +12,13 @@\n     on<HomeProductWishlistButtonClickedEvent>(\n         homeProductWishlistButtonClickedEvent);\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n-     on<HomeProductWishlistButtonNavigateEvent>(\n+    on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n   }\n  \n- \n+\n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n      Future.delayed(Duration(seconds:3));\n      emit(HomeLoadedSuccessState());\n"
+                },
+                {
+                    "date": 1732965586395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n   }\n  \n-\n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n      Future.delayed(Duration(seconds:3));\n      emit(HomeLoadedSuccessState());\n"
+                },
+                {
+                    "date": 1732969548257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n+        on<>\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n"
+                },
+                {
+                    "date": 1732969555923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n-        on<>\n+        on<Home>\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n"
+                },
+                {
+                    "date": 1732969562996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n-        on<Home>\n+        on<HomeP>\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n"
+                },
+                {
+                    "date": 1732969571553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n-        on<HomeP>\n+        on<HomePrintHelloWorldEvent>\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n"
+                },
+                {
+                    "date": 1732969577588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n-        on<HomePrintHelloWorldEvent>\n+        on<HomePrintHelloWorldEvent>(home)\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n"
+                },
+                {
+                    "date": 1732969582925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n-        on<HomePrintHelloWorldEvent>(home)\n+        on<HomePrintHelloWorldEvent>(HomePrintHelloWorldEvent)\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n"
+                },
+                {
+                    "date": 1732969600024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n-        on<HomePrintHelloWorldEvent>(HomePrintHelloWorldEvent)\n+        on<HomePrintHelloWorldEvent>(homePrintHelloWorldEvent);\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n"
+                },
+                {
+                    "date": 1732969605635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,5 +45,8 @@\n     print(\"Wishlist Navigate Clicked\");\n     emit(HomeNavtoWishlistPageActionState());\n   }\n \n+\n+  FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n+  }\n }\n"
+                },
+                {
+                    "date": 1732969616711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,6 +47,7 @@\n   }\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n+    p\n   }\n }\n"
+                },
+                {
+                    "date": 1732969622467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,7 @@\n   }\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n-    p\n+    emit\n   }\n }\n"
+                },
+                {
+                    "date": 1732969727466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,7 @@\n   }\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n-    emit\n+    emit()\n   }\n }\n"
+                },
+                {
+                    "date": 1732969741573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,7 @@\n   }\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n-    emit()\n+    emit(Home)\n   }\n }\n"
+                },
+                {
+                    "date": 1732969748531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,7 @@\n   }\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n-    emit(Home)\n+    emit(HomePrintHelloWorldPrint())\n   }\n }\n"
+                },
+                {
+                    "date": 1732969761942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,7 @@\n   }\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n-    emit(HomePrintHelloWorldPrint())\n+    emit(HomePrintHelloWorldPrintState())\n   }\n }\n"
+                },
+                {
+                    "date": 1732970278964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,9 @@\n   }\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n-    emit(HomePrintHelloWorldPrintState())\n+    emit(HomePrintHelloWorldPrintState(\n+      \n+    ));\n   }\n }\n"
+                },
+                {
+                    "date": 1732970406496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,7 @@\n   }\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n-    emit(HomePrintHelloWorldPrintState(\n-      \n-    ));\n+    emit(HomePrintHelloWorldPrintState());\n   }\n }\n"
+                },
+                {
+                    "date": 1732970413049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,7 @@\n   }\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n-    emit(HomePrintHelloWorldPrintState());\n+    emit(HomePrintHelloWorldPrintState(\"Hello\"));\n   }\n }\n"
+                },
+                {
+                    "date": 1732970419151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,7 @@\n   }\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n-    emit(HomePrintHelloWorldPrintState(\"Hello\"));\n+    emit(HomePrintHelloWorldPrintState(\"Hello W\"));\n   }\n }\n"
+                },
+                {
+                    "date": 1732970444937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,8 @@\n   }\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n-    emit(HomePrintHelloWorldPrintState(\"Hello W\"));\n+    emit(HomePrintHelloWorldPrintState(\"Hello World\"));\n+    \n   }\n }\n"
+                },
+                {
+                    "date": 1732970489517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,7 +48,6 @@\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n     emit(HomePrintHelloWorldPrintState(\"Hello World\"));\n-    \n   }\n }\n"
+                },
+                {
+                    "date": 1732972248541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,6 +48,7 @@\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n     emit(HomePrintHelloWorldPrintState(\"Hello World\"));\n+    print\n   }\n }\n"
+                },
+                {
+                    "date": 1732972259158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n         on<HomePrintHelloWorldEvent>(homePrintHelloWorldEvent);\n+        \n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n@@ -48,7 +49,6 @@\n \n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n     emit(HomePrintHelloWorldPrintState(\"Hello World\"));\n-    print\n   }\n }\n"
+                },
+                {
+                    "date": 1732972613707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n         on<HomePrintHelloWorldEvent>(homePrintHelloWorldEvent);\n-        \n+        on<Home>\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n"
+                },
+                {
+                    "date": 1732972624304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n         on<HomePrintHelloWorldEvent>(homePrintHelloWorldEvent);\n-        on<Home>\n+        on<HomeC>\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n"
+                },
+                {
+                    "date": 1732972631767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n         on<HomePrintHelloWorldEvent>(homePrintHelloWorldEvent);\n-        on<HomeC>\n+        on<HomeClearHelloWorldEvent>(homw)\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n"
+                },
+                {
+                    "date": 1732972638034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n         on<HomePrintHelloWorldEvent>(homePrintHelloWorldEvent);\n-        on<HomeClearHelloWorldEvent>(homw)\n+        on<HomeClearHelloWorldEvent>(HomeClearHelloWorldEvent)\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n"
+                },
+                {
+                    "date": 1732972644278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n         on<HomePrintHelloWorldEvent>(homePrintHelloWorldEvent);\n-        on<HomeClearHelloWorldEvent>(HomeClearHelloWorldEvent)\n+        on<HomeClearHelloWorldEvent>(homeClearHelloWorldEvent)\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n"
+                },
+                {
+                    "date": 1732972660291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n         on<HomePrintHelloWorldEvent>(homePrintHelloWorldEvent);\n-        on<HomeClearHelloWorldEvent>(homeClearHelloWorldEvent)\n+        on<HomeClearHelloWorldEvent>(homeClearHelloWorldEvent);\n   }\n  \n   FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n      emit(HomeLoadingState());\n@@ -50,5 +50,8 @@\n \n   FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n     emit(HomePrintHelloWorldPrintState(\"Hello World\"));\n   }\n+\n+  FutureOr<void> homeClearHelloWorldEvent(HomeClearHelloWorldEvent event, Emitter<HomeState> emit) {\n+  }\n }\n"
+                },
+                {
+                    "date": 1732972666116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,6 +52,7 @@\n     emit(HomePrintHelloWorldPrintState(\"Hello World\"));\n   }\n \n   FutureOr<void> homeClearHelloWorldEvent(HomeClearHelloWorldEvent event, Emitter<HomeState> emit) {\n+    \n   }\n }\n"
+                },
+                {
+                    "date": 1732972688208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,7 +52,7 @@\n     emit(HomePrintHelloWorldPrintState(\"Hello World\"));\n   }\n \n   FutureOr<void> homeClearHelloWorldEvent(HomeClearHelloWorldEvent event, Emitter<HomeState> emit) {\n-    \n+     emit(HomePrintHelloWorldPrintState(\"Hello World\"));\n   }\n }\n"
+                },
+                {
+                    "date": 1732972694333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,7 +52,7 @@\n     emit(HomePrintHelloWorldPrintState(\"Hello World\"));\n   }\n \n   FutureOr<void> homeClearHelloWorldEvent(HomeClearHelloWorldEvent event, Emitter<HomeState> emit) {\n-     emit(HomePrintHelloWorldPrintState(\"Hello World\"));\n+     emit(HomePrintHelloWorldPrintState(\"Hello Vikram\"));\n   }\n }\n"
+                },
+                {
+                    "date": 1732972699775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,16 +14,17 @@\n     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);\n     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);\n     on<HomeProductWishlistButtonNavigateEvent>(\n         homeProductWishlistButtonNavigateEvent);\n-        on<HomePrintHelloWorldEvent>(homePrintHelloWorldEvent);\n-        on<HomeClearHelloWorldEvent>(homeClearHelloWorldEvent);\n+    on<HomePrintHelloWorldEvent>(homePrintHelloWorldEvent);\n+    on<HomeClearHelloWorldEvent>(homeClearHelloWorldEvent);\n   }\n- \n-  FutureOr<void> homeInitialEvent(HomeInitialEvent event, Emitter<HomeState> emit) {\n-     emit(HomeLoadingState());\n-     Future.delayed(Duration(seconds:3));\n-     emit(HomeLoadedSuccessState());\n+\n+  FutureOr<void> homeInitialEvent(\n+      HomeInitialEvent event, Emitter<HomeState> emit) {\n+    emit(HomeLoadingState());\n+    Future.delayed(Duration(seconds: 3));\n+    emit(HomeLoadedSuccessState());\n   }\n \n   FutureOr<void> homeProductWishlistButtonClickedEvent(\n       HomeProductWishlistButtonClickedEvent event, Emitter<HomeState> emit) {\n@@ -46,13 +47,14 @@\n     print(\"Wishlist Navigate Clicked\");\n     emit(HomeNavtoWishlistPageActionState());\n   }\n \n-\n-  FutureOr<void> homePrintHelloWorldEvent(HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n+  FutureOr<void> homePrintHelloWorldEvent(\n+      HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {\n     emit(HomePrintHelloWorldPrintState(\"Hello World\"));\n   }\n \n-  FutureOr<void> homeClearHelloWorldEvent(HomeClearHelloWorldEvent event, Emitter<HomeState> emit) {\n-     emit(HomePrintHelloWorldPrintState(\"Hello Vikram\"));\n+  FutureOr<void> homeClearHelloWorldEvent(\n+      HomeClearHelloWorldEvent event, Emitter<HomeState> emit) {\n+    emit(HomePrintHelloWorldPrintState(\"Hello Vikram\"));\n   }\n }\n"
+                },
+                {
+                    "date": 1732972758116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,7 +54,7 @@\n   }\n \n   FutureOr<void> homeClearHelloWorldEvent(\n       HomeClearHelloWorldEvent event, Emitter<HomeState> emit) {\n-    emit(HomePrintHelloWorldPrintState(\"Hello Vikram\"));\n+    emit(HomePrintHelloWorldPrintState(\"\"));\n   }\n }\n"
                 }
             ],
             "date": 1732798320330,

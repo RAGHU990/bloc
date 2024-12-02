@@ -8,12 +8,22 @@ part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc() : super(HomeInitial()) {
+    on<HomeInitialEvent>(homeInitialEvent);
     on<HomeProductWishlistButtonClickedEvent>(
         homeProductWishlistButtonClickedEvent);
     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);
     on<HomeProductCartButtonNavigateEvent>(homeProductCartButtonNavigateEvent);
     on<HomeProductWishlistButtonNavigateEvent>(
         homeProductWishlistButtonNavigateEvent);
+    on<HomePrintHelloWorldEvent>(homePrintHelloWorldEvent);
+    on<HomeClearHelloWorldEvent>(homeClearHelloWorldEvent);
+  }
+
+  FutureOr<void> homeInitialEvent(
+      HomeInitialEvent event, Emitter<HomeState> emit) {
+    emit(HomeLoadingState());
+    Future.delayed(Duration(seconds: 3));
+    emit(HomeLoadedSuccessState());
   }
 
   FutureOr<void> homeProductWishlistButtonClickedEvent(
@@ -36,5 +46,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       HomeProductWishlistButtonNavigateEvent event, Emitter<HomeState> emit) {
     print("Wishlist Navigate Clicked");
     emit(HomeNavtoWishlistPageActionState());
+  }
+
+  FutureOr<void> homePrintHelloWorldEvent(
+      HomePrintHelloWorldEvent event, Emitter<HomeState> emit) {
+    emit(HomePrintHelloWorldPrintState("Hello World"));
+  }
+
+  FutureOr<void> homeClearHelloWorldEvent(
+      HomeClearHelloWorldEvent event, Emitter<HomeState> emit) {
+    emit(HomePrintHelloWorldPrintState(""));
   }
 }

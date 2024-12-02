@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/features/cart/ui/cart.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1732942958985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1732942966326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,15 @@\n-stf\n\\ No newline at end of file\n+import 'package:flutter/material.dart';\r\n+\r\n+class Cart extends StatefulWidget {\r\n+  const Cart({super.key});\r\n+\r\n+  @override\r\n+  State<Cart> createState() => _CartState();\r\n+}\r\n+\r\n+class _CartState extends State<Cart> {\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return const Placeholder();\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1732942958985,
+            "name": "Commit-0",
+            "content": "stf"
+        }
+    ]
+}

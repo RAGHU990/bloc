@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/features/cart/bloc/cart_bloc.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1732964884316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1732964884316,
+            "name": "Commit-0",
+            "content": "import 'package:bloc/bloc.dart';\nimport 'package:meta/meta.dart';\n\npart 'cart_event.dart';\npart 'cart_state.dart';\n\nclass CartBloc extends Bloc<CartEvent, CartState> {\n  CartBloc() : super(CartInitial()) {\n    on<CartEvent>((event, emit) {\n    });\n  }\n}\n"
+        }
+    ]
+}
